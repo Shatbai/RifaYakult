@@ -19,6 +19,11 @@
 				<div class="col-md-12">
 					<h1 class="primera_linea">REGISTROS</h1>
 					<h3 class="segunda_linea">*Aquí van los registros</h3>
+					<ul class="product_list">
+						{{#each personas}}
+						  <li>{{this.nombre}}</li>
+						{{/each}}
+					</ul>
 					<div class="contenedor-btns">
                         <br>
                         <br>
