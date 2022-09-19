@@ -10,13 +10,17 @@ router.get('/registrar', PagesController.registrar);
 
 router.get('/aleatorio',PagesController.aleatorio);
 
-router.get('/miboleto',PagesController.verboleto);
+router.get('/mireferencia',PagesController.darreferencia);
 
 router.get('/registros',PagesController.registros);
 
 router.get('/buscar', PersonasController.create);
+
 router.post('/buscar', PersonasController.buscar);
-router.get('/:id', PersonasController.show);
+
+router.get('/:ref', PersonasController.show);
+
+router.put('/aleatorio/:ref', PersonasController.update);
 
 
 module.exports = router;

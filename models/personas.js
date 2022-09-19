@@ -20,29 +20,17 @@ exports.all = () => {
     .select('*')
     .from('personas');
 }
-exports.find = (id) => {
+exports.find = (ref) => {
   return knex
     .select('*')
     .from('personas')
-    .where('id', id)
+    .where('ref', ref)
     .first();
 }
 
-exports.edit = (req, res) => {
-  // Obtiene el id que viene en la url
-  let id = req.params.id;
-  // Busca dentro de la base de datos el producto con el id indicado
-  ProductModel.find(id).then((product) => {
-    // Si el producto no existe entonces
-    if (product == null) {
-      // Regresa el error 404
-      res.status(404).send('Not found');
-      return;
-    }
-    // Si el producto existe entonces muestra la vista products/edit.hbs
-    // con la información del producto
-    res.render('products/edit', {product: product});
-  });
+exports.update = (ref, personas) => {
+  return knex('personas')
+    .update(personas)
+    .update('updated_at', knex.fn.now())
+    .where('ref', ref);
 }
-
-//

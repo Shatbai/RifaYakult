@@ -2,6 +2,10 @@ let express = require('express');
 
 let app = express();
 
+let methodOverride = require('method-override')
+app.use(methodOverride('_method'))
+
+
 let appRoutes = require('./routes/app');
 
 let appConfig = require('./configs/app');
@@ -10,7 +14,6 @@ const path = require('path');
 
 let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 app.use('/', appRoutes);
 

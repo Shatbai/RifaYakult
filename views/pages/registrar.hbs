@@ -4,7 +4,7 @@
 <title>YAKULT REGISTRAR</title>
 	
 <link rel="stylesheet" href="css/estilosregistrar.css">
-<form method="POST" action="/pages" id="msform">
+<form method="POST" action="/aleatorio?_method=PUT" id="msform">
     
     <ul id="progressbar">
       <li class="progressbar__option active">Registrar datos</li>
@@ -13,14 +13,12 @@
     <fieldset>
       <h2 class="fs-title">Captura tus datos</h2>
       <h3 class="fs-subtitle">Rifa Yakult 2022</h3>
-      <input type="text" id="ref"name="ref" placeholder="Número de ticket" />
-      <input type="text" id="nombre"name="nombre" placeholder="Nombre completo" />
-      <input type="text" id="telefono"name="telefono" placeholder="Teléfono" />
-      <input type="email" id="email"name="email" placeholder="Correo electronico" />
+      <input type="text" id="ref"name="ref" placeholder="Número de ticket" value="{{ personas.ref }}"/>
+      <input type="text" id="nombre"name="nombre" placeholder="Nombre completo" value="{{ personas.nombre }}"/>
+      <input type="text" id="telefono"name="telefono" placeholder="Teléfono" value="{{ personas.telefono }}"/>
+      <input type="email" id="email"name="email" placeholder="Correo electronico" value="{{ personas.email }}"/>
       <a href="/"><input type="button" name="next" class="back back-button" value="Regresar" /></a>
-      
-      
-      <a href="aleatorio"><input type= "sumbit" name="next" class="next action-button" value="Registrar" /></a>
+      <input type= "Sumbit" name="next" class="next action-button" value="Registrar" /></a>
     </fieldset>
     
     <script src="jquery.js"></script>

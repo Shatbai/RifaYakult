@@ -10,9 +10,10 @@ exports.registrar = (req, res) => {
 exports.aleatorio = (req, res) => {
   res.render('pages/aleatorio');
   }
-exports.verboleto = (req, res) => {
-  res.render('pages/miboleto');
-  }
+  
+exports.darreferencia = (req, res) => {
+    res.render('pages/mireferencia');
+    }
 exports.registros = (req, res) => {
   ProductModel.all()
     .then((data) => {
