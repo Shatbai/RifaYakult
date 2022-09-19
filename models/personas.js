@@ -31,6 +31,6 @@ exports.find = (ref) => {
 exports.update = (ref, personas) => {
   return knex('personas')
     .update(personas)
-    .update('updated_at', knex.fn.now())
+    //.update('updated_at', knex.fn.now())
     .where('ref', ref);
 }

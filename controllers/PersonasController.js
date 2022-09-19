@@ -52,7 +52,12 @@ exports.buscar=(req,res)=>{
             return res.render('pages/registrar', {personas: personas});
             
          }
-         res.render('pages/aleatorio', {personas: personas});
+         let d1= personas.boleto.substring(0,1);
+         let d2= personas.boleto.substring(1,2);
+         let d3= personas.boleto.substring(2,3);
+         let d4= personas.boleto.substring(3,4);
+         let d5= personas.boleto.substring(4,5);
+         res.render('pages/aleatorio', {personas: personas,d1:d1,d2:d2,d3:d3,d4:d4,d5:d5});
 
         });
 
@@ -83,6 +88,9 @@ exports.update = (req, res) => {
               // Al terminar redirige el índice
              // res.redirect('/');
              console.log('REgistro')
+             res.render('pages/aleatorio', {personas: personas});
+             return
+
             });
         });
       }

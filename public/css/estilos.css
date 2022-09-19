@@ -11,6 +11,10 @@ header {
   background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat; }
+  .imgnum{
+    height: 100px;
+    width: 120px;
+  }
   header .contenedor_logo_menu {
     padding: 25px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
