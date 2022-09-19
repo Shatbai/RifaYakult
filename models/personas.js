@@ -23,7 +23,7 @@ exports.all = () => {
 exports.find = (id) => {
   return knex
     .select('*')
-    .from('products')
+    .from('personas')
     .where('id', id)
     .first();
 }

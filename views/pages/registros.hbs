@@ -12,12 +12,30 @@
 			<div class="row textos">
 				<div class="col-md-12">
 					<h1 class="primera_linea">REGISTROS</h1>
-					<ul class="segunda_linea">
+					<table class="segunda_linea">
 						{{#each personas}}
-						  <li>{{this.nombre}}</li>
+						<tr>
+							<th>Referencia</th>
+							<td>{{this.ref}}</td>
+						</tr>
+						<tr>
+							<th>Nombre</th>
+							<td>{{this.nombre}}</td>
+						</tr>
+						<tr>
+							<th>Telefono</th>
+							<td>{{this.telefono}}</td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>{{this.email}}</td>
+						</tr>
+						<tr>
+							<th>Boleto</th>
+							<td>{{this.boleto}}</td>
+						</tr>
 						{{/each}}
-					</ul>
-					{{persona.nombre}}
+					</table>
 					<div class="contenedor-btns">
                         <br>
                         <br>

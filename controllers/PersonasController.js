@@ -6,14 +6,14 @@ exports.create = (req, res) => {
   }
   
 exports.store = (req, res) => {
-    let persona = {
+    let personas = {
       ref: req.body.ref,
       nombre: req.body.nombre,
       telefono: req.body.telefono,
       email:req.body.email,
     };
 
-    ProductModel.create(persona)
+    ProductModel.create(personas)
       .then((id) => {
         res.redirect('/');
       });
@@ -22,21 +22,22 @@ exports.store = (req, res) => {
     // Obtiene el id que viene en la url
     let id = req.params.id;
     // Busca dentro de la base de datos el producto con el id indicado
-    ProductModel.find(id).then((persona) => {
+    ProductModel.find(id).then((personas) => {
       // Si el producto no existe entonces
-      if (persona == null) {
+      if (personas == null) {
         // Regresa el error 404
         res.status(404).send('Not found');
         return;
       }
       // Si el producto existe entonces muestra la vista products/show.hbs
       // con la información del producto
-      res.render('pages/registro', {product: product});
+      res.render('pages/registros', {personas: personas});
     });
   }
 exports.buscar=(req,res)=>{
-    let persona = {
+    let personas = {
         ref: req.body.ref
     };
     console.log(req.body)
+
   }

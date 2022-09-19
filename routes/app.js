@@ -16,6 +16,7 @@ router.get('/registros',PagesController.registros);
 
 router.get('/buscar', PersonasController.create);
 router.post('/buscar', PersonasController.buscar);
+router.get('/:id', PersonasController.show);
 
 
 module.exports = router;
