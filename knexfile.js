@@ -6,11 +6,11 @@ module.exports = {
   development: {
     client: 'mysql2',
     connection: {
-      host: process.env.DB_DEVELOPMENT_HOST || '127.0.0.1',
+      host: process.env.DB_DEVELOPMENT_HOST || 'localhost',
       port: process.env.DB_DEVELOPMENT_PORT || '3306',
-      database: process.env.DB_DEVELOPMENT_NAME || 'DB_Yakult',
+      database: process.env.DB_DEVELOPMENT_NAME || 'my_database',
       user:  process.env.DB_DEVELOPMENT_USER || 'root',
-      password: process.env.DB_DEVELOPMENT_PASSWORD || 'Ichigo2014'
+      password: process.env.DB_DEVELOPMENT_PASSWORD || ''
     },
     pool: {
       min: 2,
@@ -23,11 +23,11 @@ module.exports = {
   production: {
     client: 'mysql2',
     connection: {
-      host: process.env.DB_PRODUCTION_HOST || '127.0.0.1',
+      host: process.env.DB_PRODUCTION_HOST || 'localhost',
       port: process.env.DB_PRODUCTION_PORT || '3306',
-      database: process.env.DB_PRODUCTION_NAME || 'DB_Yakult',
+      database: process.env.DB_PRODUCTION_NAME || 'my_database',
       user:  process.env.DB_PRODUCTION_USER || 'root',
-      password: process.env.DB_PRODUCTION_PASSWORD || 'Ichigo2014'
+      password: process.env.DB_PRODUCTION_PASSWORD || ''
     },
     pool: {
       min: 2,

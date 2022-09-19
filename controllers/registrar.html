@@ -15,7 +15,7 @@
 
 <!-- multistep form NOSOTROS--> 
 
-<form id="msform">
+<form method="POST" action="/personas" id="msform">
     
     <ul id="progressbar">
       <li class="progressbar__option active">Registrar datos</li>
@@ -24,10 +24,10 @@
     <fieldset>
       <h2 class="fs-title">Captura tus datos</h2>
       <h3 class="fs-subtitle">Rifa Yakult 2022</h3>
-      <input type="text" name="email" placeholder="Número de ticket" />
-      <input type="text" name="email" placeholder="Nombre completo" />
-      <input type="password" name="pass" placeholder="Teléfono" />
-      <input type="password" name="cpass" placeholder="Correo electronico" />
+      <input type="text" id="ref"name="ref" placeholder="Número de ticket" />
+      <input type="text" id="nombre"name="nombre" placeholder="Nombre completo" />
+      <input type="password" id="telefono"name="telefono" placeholder="Teléfono" />
+      <input type="password" id="email"name="email" placeholder="Correo electronico" />
       <a href="/"><input type="button" name="next" class="back back-button" value="Regresar" /></a>
       
       

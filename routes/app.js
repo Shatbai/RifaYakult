@@ -1,6 +1,7 @@
 let router = require('express').Router();
 
 let PagesController = require('../controllers/PagesController');
+let PersonasController = require('../controllers/PersonasController');
 
 router.get('/', PagesController.index);
 
@@ -12,6 +13,9 @@ router.get('/aleatorio',PagesController.aleatorio);
 router.get('/miboleto',PagesController.verboleto);
 
 router.get('/registros',PagesController.registros);
+
+router.get('/buscar', PersonasController.create);
+router.post('/buscar', PersonasController.buscar);
 
 
 module.exports = router;

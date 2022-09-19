@@ -1,23 +1,23 @@
 const path = require('path');
 let ProductModel = require('../models/personas')
 exports.index = (req, res) => {
-    res.sendFile(path.join(__dirname+'/index.html'));
+  res.render('pages/index');
   }
   
 exports.registrar = (req, res) => {
-  ProductModel.all()
-  .then((data) => {
-    let personas = data;
-    res.sendFile(path.join(__dirname+'/registrar.html'),{personas:personas});
-  });
-
+  res.render('pages/registrar');
   }
 exports.aleatorio = (req, res) => {
-    res.sendFile(path.join(__dirname+'/aleatorio.html'));
+  res.render('pages/aleatorio');
   }
 exports.verboleto = (req, res) => {
-    res.sendFile(path.join(__dirname+'/miboleto.html'));
+  res.render('pages/miboleto');
   }
-  exports.registros = (req, res) => {
-    res.sendFile(path.join(__dirname+'/registros.html'));
-  } 
+exports.registros = (req, res) => {
+  ProductModel.all()
+    .then((data) => {
+      // Guardamos los productos en una variable
+      let personas = data;
+      res.render('pages/registros',{personas: personas});
+    });
+  }
