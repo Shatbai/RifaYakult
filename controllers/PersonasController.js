@@ -38,7 +38,7 @@ exports.buscar=(req,res)=>{
     let refd = {
         ref: req.body.ref
     };
-    console.log(req.body.ref);
+    //console.log(req.body.ref);
     ProductModel.find(req.body.ref).then((personas) =>{
         if (personas == null) {
             // Regresa el error 404
@@ -49,7 +49,8 @@ exports.buscar=(req,res)=>{
           // con la información del producto
          console.log(personas.nombre);
          if(personas.nombre == ''){
-            res.render('pages/registrar', {personas: personas});
+            return res.render('pages/registrar', {personas: personas});
+            
          }
          res.render('pages/aleatorio', {personas: personas});
 
@@ -57,8 +58,9 @@ exports.buscar=(req,res)=>{
 
     }
 exports.update = (req, res) => {
+    console.log('Entra')
         // Obtiene el id que viene en la url
-        let ref = req.params.ref;
+        let ref = req.body.ref;
         // Busca dentro de la base de datos el producto con el id indicado
         ProductModel.find(ref).then((personas) => {
           // Si el producto no existe entonces
@@ -76,10 +78,11 @@ exports.update = (req, res) => {
           }
       
           // Actualiza los datos del producto
-          ProductModel.update(product.ref, updateProduct)
+          ProductModel.update(personas.ref, updateProduct)
             .then((ref) => {
               // Al terminar redirige el índice
-              res.redirect('/pages/aleatorio');
+             // res.redirect('/');
+             console.log('REgistro')
             });
         });
       }

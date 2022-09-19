@@ -20,7 +20,7 @@ router.post('/buscar', PersonasController.buscar);
 
 router.get('/:ref', PersonasController.show);
 
-router.put('/aleatorio/:ref', PersonasController.update);
+router.put('/aleatorio', PersonasController.update);
 
 
 module.exports = router;
