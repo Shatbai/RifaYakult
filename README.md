@@ -1,5 +1,10 @@
 # RifaYakult
 
+## Oscar Alfredo Belmont Rodríguez - A01654861
+## Andrea Alessandra Villarruel Sernas - A01656255
+
+### INSTRUCCIONES
+
 Revisar si se tiene node instalado
 
 Abrir la línea de comandos y ejecutar
@@ -63,3 +68,25 @@ knex seed:run
 ```
 
 Si vemos nuestra base de datos notaremos que ya se llena la tabla en nuestra base.
+
+### .env
+
+El archivo .env tiene que contener el siguiente bloque para que la configuración sea la adecuada para el proyecto:
+
+```
+NODE_ENV=development
+
+EXPRESS_PORT=3000
+
+DB_DEVELOPMENT_HOST=127.0.0.1
+DB_DEVELOPMENT_PORT=3306
+DB_DEVELOPMENT_NAME=DB_Yakult
+DB_DEVELOPMENT_USER=root
+DB_DEVELOPMENT_PASSWORD=
+
+DB_DEVELOPMENT_HOST=127.0.0.1
+DB_DEVELOPMENT_PORT=3306
+DB_DEVELOPMENT_NAME=DB_Yakult
+DB_DEVELOPMENT_USER=root
+DB_DEVELOPMENT_PASSWORD=
+```
